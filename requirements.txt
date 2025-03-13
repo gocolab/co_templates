@@ -1,0 +1,5 @@
+langgraph
+langgraph-studio
+notebook
+langchain
+langchain-openai
