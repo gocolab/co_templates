@@ -43,4 +43,3 @@ app = graph.compile()
 if __name__ == "__main__":
     from langgraph.utils import load_graph
     load_graph("demo_graph", app)
-EOL
