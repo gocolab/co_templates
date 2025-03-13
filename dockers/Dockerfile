@@ -27,9 +27,9 @@ RUN pip install --no-cache-dir -r ./requirements.txt
 RUN rm -rf .git
 
 # VS Code 서버 준비
-RUN curl -fsSL https://code-server.dev/install.sh | sh
+# RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 # 시작 스크립트 생성
-RUN echo '#!/bin/bash\ncode-server --host 0.0.0.0 --port 8080 & langgraph studio --port 8000 --host 0.0.0.0' > /start.sh \
-    && chmod +x /start.sh
+# RUN echo '#!/bin/bash\ncode-server --host 0.0.0.0 --port 8080 & langgraph studio --port 8000 --host 0.0.0.0' > /start.sh \
+#     && chmod +x /start.sh
 
