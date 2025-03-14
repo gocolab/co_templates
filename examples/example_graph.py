@@ -8,8 +8,18 @@ class AgentState(TypedDict):
     messages: List[str]
     next_steps: List[str]
 
+from dotenv import load_dotenv
+import os
+
+# .env 파일에서 환경 변수 로드
+load_dotenv()
+
 # LLM 정의
-llm = ChatOpenAI(model="gpt-3.5-turbo")
+llm = ChatOpenAI(
+    model="gpt-3.5-turbo",
+    api_key=os.getenv("OPENAI_API_KEY")
+)
+
 
 # 노드 함수 정의
 def think(state: AgentState) -> AgentState:
@@ -38,8 +48,3 @@ graph.add_edge("respond", "think")
 
 # 그래프 컴파일
 app = graph.compile()
-
-# LangGraph Studio에 등록
-if __name__ == "__main__":
-    from langgraph.utils import load_graph
-    load_graph("demo_graph", app)
