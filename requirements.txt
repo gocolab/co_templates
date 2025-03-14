@@ -1,4 +1,4 @@
-langgraph
+langgraph==0.3.10
 "langgraph-cli[inmem]"
 langchain
 langchain-openai
