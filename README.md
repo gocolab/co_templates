@@ -9,16 +9,12 @@
 ports:
   - "8000:8000"  # LangGraph Studio
 
-#### connect remote Docker container
-```
-~$ langgraph dev --port 8000 --host 0.0.0.0
-```
-
 #### samples
 ```
 ~$ cp .env_copy .env
 ~$ vi .env
 OPENAI_API_KEY=<your api key>
+~$ langgraph dev --port 8000 --host 0.0.0.0
 ```
 - @LangGraph Studio: https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:8000
 
