@@ -5,12 +5,13 @@ ARG APP_DIR_NAME
 ARG GIT_URI
 
 # 기본 도구 설치
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    wget \
-    sudo \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update || apt-get update --allow-unauthenticated && \
+    apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        wget \
+        sudo && \
+    rm -rf /var/lib/apt/lists/*
 
 # 작업 디렉토리 설정
 WORKDIR /apps
